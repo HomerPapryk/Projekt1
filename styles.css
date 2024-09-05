@@ -1,4 +1,4 @@
-/* Resetowanie domyślnych marginesów i paddingów */
+/* Resetting default margins and paddings */
 body,
 html {
   margin: 0;
@@ -9,7 +9,12 @@ html {
   box-sizing: border-box;
 }
 
-/* Nagłówek */
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+/* Header */
 .header {
   width: 100%;
   height: 50px;
@@ -20,13 +25,19 @@ html {
   padding: 0 14px;
   box-sizing: border-box;
   position: relative;
-  z-index: 3;
 }
 
-/* kursor not-allowed */
+/* cursor not-allowed */
+.nav-link {
+  color: #fff;
+  text-decoration: none;
+  cursor: pointer;
+}
+
 .nav-link.disabled {
-  color: #000000;
   cursor: not-allowed;
+  color: #999;
+  text-decoration: none;
 }
 
 .logo {
@@ -42,7 +53,7 @@ html {
   flex-shrink: 0;
 }
 
-/* Zmiany dla małych ekranów */
+/* Small screens */
 @media (max-width: 768px) {
   .logo {
     text-align: left;
@@ -70,6 +81,16 @@ html {
   .navigation {
     display: none;
   }
+
+  .social-icons i {
+    width: 31px;
+    height: 31px;
+    font-size: 31px;
+  }
+
+  .social-icons {
+    gap: 18px;
+  }
 }
 
 @media (max-width: 1280px) {
@@ -78,11 +99,11 @@ html {
   }
 }
 
-/* Sekcja główna */
+/* Main Section */
 .landing-page {
+  position: relative;
   width: 100%;
-  height: calc(100vh - 50px);
-  background-image: url("https://picsum.photos/1920/1080");
+  height: 100vh;
   background-size: cover;
   background-position: center;
   display: flex;
@@ -90,8 +111,10 @@ html {
   align-items: flex-start;
   justify-content: center;
   padding: 0 14px;
+  background-image: url("Landing-Page/LandingPage.jpg");
 }
-/* Warstwa cienia */
+
+/* Overlay */
 .overlay {
   position: absolute;
   top: 0;
@@ -99,34 +122,27 @@ html {
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.5);
-  z-index: 1;
 }
 
 @media (max-width: 1280px) {
-  .landing-page {
-    height: 574px;
-    width: 100%;
-  }
-
   .overlay {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
-    height: 624px;
+    height: 100%;
     background-color: rgba(0, 0, 0, 0.5);
-    z-index: 1;
   }
 }
 
 /* Stylizacja treści */
 .content {
   position: relative;
-  z-index: 2;
   color: #fff;
   padding: 20px;
 }
-.content h1 {
+
+.content-title {
   font-size: 36px;
   line-height: 1.2;
   margin-bottom: 14px;
@@ -145,7 +161,7 @@ html {
   border: 2px solid #fff;
   color: #fff;
   font-size: 18px;
-  transition: background-color 1s, color 1s;
+  transition: 1s;
   box-sizing: border-box;
   text-decoration: none;
   padding: 14px 58px 14px 57px;
@@ -161,21 +177,21 @@ html {
   line-height: 1;
 }
 
-/* Stylizacja przycisku na desktopie z efektem hover */
+/* Styling a button on a desktop with a hover effect */
 @media (min-width: 769px) {
   .button:hover {
     background-color: #fff;
     color: #000;
   }
 
-  /* Inne efekty hover dla elementów na desktopie */
+  /* Other hover effects for elements on the desktop */
   .service-box:hover {
     transform: scale(1.05);
     transition: transform 0.5s ease;
   }
 }
 
-/* Sekcja "Nasi specjaliści" */
+/* section "Our specialists" */
 .about {
   padding: 34px 14px 51px 14px;
   background-color: #ffffff;
@@ -192,29 +208,40 @@ html {
   margin-bottom: 42px;
 }
 
-.specialist-image {
+.specialist-image-1 {
   width: 197px;
   height: 197px;
   border-radius: 50%;
   background-size: cover;
   background-position: center;
   margin: 0 auto 14px;
+  background-image: url("Photos/woman-6466907_640.jpg");
 }
 
-.specialist-info h3 {
+.specialist-image-2 {
+  width: 197px;
+  height: 197px;
+  border-radius: 50%;
+  background-size: cover;
+  background-position: center;
+  margin: 0 auto 14px;
+  background-image: url("Photos/corset-6243486_640.jpg");
+}
+
+.specialist-info .specialist-name {
   font-size: 18px;
   font-weight: 700;
   margin-bottom: 14px;
   text-align: left;
 }
 
-specialist-info p {
+.specialist-info p {
   font-size: 14px;
   color: #000;
   text-align: left;
 }
 
-/* Sekcja "Czym zajmuje się nasza firma?" */
+/* Section "What does our company do?" */
 .offer-section {
   padding: 76px 14px;
   background-color: #405d78;
@@ -254,22 +281,12 @@ specialist-info p {
   align-items: center;
 }
 
-/* Ustawienia wielkości dla każdego boxu */
-.service-box:nth-child(1) {
+.service-box.odd {
   height: 332px;
   width: 338px;
 }
 
-.service-box:nth-child(2),
-.service-box:nth-child(3),
-.service-box:nth-child(5),
-.service-box:nth-child(6) {
-  height: 332px;
-  width: 339px;
-}
-
-.service-box:nth-child(4),
-.service-box:nth-child(7) {
+.service-box.even {
   height: 330px;
   width: 337px;
 }
@@ -286,32 +303,24 @@ specialist-info p {
     margin-bottom: 42px;
   }
 
-  .service-box:nth-child(3),
-  .service-box:nth-child(6) {
+  .service-box.even {
     margin-left: 52px;
     margin-right: 52px;
   }
 }
 
-/* Stylizacja kropki dla mobilnej wersji */
+/* Dot Styles */
 .new-dot {
+  width: 22px;
+  height: 22px;
+  background-color: #e07a64;
+  border-radius: 50%;
   position: absolute;
-  top: -18px;
-  left: -20px;
-  width: 38px;
-  height: 38px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
+  top: -12px;
+  left: -12px;
 }
 
-.new-dot svg {
-  width: 100%;
-  height: 100%;
-}
-
-/* Stylizacja kropki dla dużej wersji */
+/* Dot styles big size */
 @media (min-width: 769px) {
   .new-dot {
     width: 22px;
@@ -325,7 +334,7 @@ specialist-info p {
     height: 100%;
   }
 }
-/* Stylizacja tekstu w boxach */
+/* Box text styles */
 .service-title {
   font-size: 24px;
   font-weight: 700;
@@ -337,7 +346,7 @@ specialist-info p {
   color: #000;
   margin-top: 0;
 }
-/* Stopka */
+/* Footer */
 .footer {
   background-color: #4e4e4e;
   color: #fff;
@@ -355,9 +364,15 @@ specialist-info p {
   margin-bottom: 15px;
 }
 
+.social-icons i {
+  width: 31px;
+  height: 31px;
+  font-size: 31px;
+  color: #fff;
+}
+
 .social-icons {
   display: flex;
-  justify-content: center;
   gap: 18px;
 }
 
@@ -396,7 +411,7 @@ specialist-info p {
   }
 
   .landing-page {
-    height: 574px;
+    height: 100vh;
     padding: 0;
     justify-content: flex-start;
   }
@@ -406,9 +421,8 @@ specialist-info p {
     top: 0;
     left: 0;
     width: 100%;
-    height: 624px;
+    height: 100%;
     background-color: rgba(0, 0, 0, 0.5);
-    z-index: 1;
   }
 
   .content {
@@ -416,7 +430,7 @@ specialist-info p {
     margin-top: 181px;
   }
 
-  .content h1 {
+  .content-title {
     width: 577px;
     font-size: 36px;
   }
@@ -472,12 +486,18 @@ specialist-info p {
     flex: 1;
   }
 
-  .specialist-info h3 {
+  .specialist-info .specialist-name {
     font-size: 18px;
     font-weight: 700;
     margin-bottom: 14px;
+    text-align: left;
   }
 
+  .specialist-info p {
+    font-size: 14px;
+    color: #000;
+    text-align: left;
+  }
   .specialist:nth-of-type(even) .specialist-info {
     display: flex;
     flex-direction: column;
@@ -501,28 +521,19 @@ specialist-info p {
   .section-title {
     font-size: 36px;
     font-weight: 700;
-    text-align: left;
-    margin-bottom: 83px;
+    text-align: center;
     margin-top: 50px;
-    margin-left: 110px;
-    margin-right: 669px;
+    margin-bottom: 83px;
+    margin-right: 110px;
+    max-width: 960px;
   }
 
-  .service-box:nth-child(1) {
+  .service-box.odd {
     height: 194px;
     width: 198px;
   }
 
-  .service-box:nth-child(2),
-  .service-box:nth-child(3),
-  .service-box:nth-child(5),
-  .service-box:nth-child(6) {
-    height: 194px;
-    width: 198px;
-  }
-
-  .service-box:nth-child(4),
-  .service-box:nth-child(7) {
+  .service-box.even {
     height: 194px;
     width: 198px;
   }
