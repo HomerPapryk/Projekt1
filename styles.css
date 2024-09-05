@@ -111,7 +111,7 @@ html {
   align-items: flex-start;
   justify-content: center;
   padding: 0 14px;
-  background-image: url("Landing-Page/LandingPage.jpg");
+  background-image: url("landing-page/landing-page.jpg");
 }
 
 /* Overlay */
@@ -215,7 +215,7 @@ html {
   background-size: cover;
   background-position: center;
   margin: 0 auto 14px;
-  background-image: url("Photos/woman-6466907_640.jpg");
+  background-image: url("specialist-photos/man.jpg");
 }
 
 .specialist-image-2 {
@@ -225,7 +225,7 @@ html {
   background-size: cover;
   background-position: center;
   margin: 0 auto 14px;
-  background-image: url("Photos/corset-6243486_640.jpg");
+  background-image: url("specialist-photos/woman.jpg");
 }
 
 .specialist-info .specialist-name {
