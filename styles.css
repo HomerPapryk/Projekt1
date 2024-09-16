@@ -10,12 +10,12 @@ html {
 }
 
 .container {
-  width: 100%;
   max-width: 960px;
   margin: 0 auto;
+  padding: 0 14px;
+  width: 100%;
   box-sizing: border-box;
 }
-
 /* Header */
 .header {
   width: 100%;
@@ -23,9 +23,15 @@ html {
   background-color: #4e4e4e;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  padding: 0 14px;
+  justify-content: center; /* Center the content */
   box-sizing: border-box;
+}
+
+.header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
 }
 
 /* Logo */
