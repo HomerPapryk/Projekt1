@@ -12,7 +12,7 @@ html {
 .container {
   max-width: 960px;
   margin: 0 auto;
-  padding: 0 14px;
+  padding: 0;
   width: 100%;
   box-sizing: border-box;
 }
@@ -59,51 +59,6 @@ html {
   color: #999;
   text-decoration: none;
 }
-/* Small screens */
-@media (min-width: 768px) {
-  .logo {
-    text-align: left;
-    width: auto;
-    padding: 10px 314px 11px 14px;
-    color: #fff;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-  }
-
-  .logo::after {
-    content: "nazwa firmy";
-    color: #ffffff;
-    position: absolute;
-    top: 10px;
-    left: 14px;
-    display: inline-block;
-    width: auto;
-    height: 29px;
-    display: flex;
-    align-items: center;
-  }
-
-  .navigation {
-    display: none;
-  }
-
-  .social-icons i {
-    width: 31px;
-    height: 31px;
-    font-size: 31px;
-  }
-
-  .social-icons {
-    gap: 18px;
-  }
-}
-
-@media (min-width: 1280px) {
-  .navigation {
-    display: none;
-  }
-}
 
 /* Main Section */
 .landing-page {
@@ -114,9 +69,9 @@ html {
   background-position: center;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
   justify-content: center;
-  padding: 0 14px;
+  padding: 0;
   background-image: url("landing-page/landing-page.jpg");
 }
 
@@ -130,22 +85,12 @@ html {
   background-color: rgba(0, 0, 0, 0.5);
 }
 
-@media (min-width: 1280px) {
-  .overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-  }
-}
-
 /* Stylizacja treści */
 .content {
   position: relative;
   color: #fff;
-  padding: 20px;
+  margin-left: 20px;
+  padding: 0;
 }
 
 .content-title {
@@ -170,7 +115,7 @@ html {
   transition: 1s;
   box-sizing: border-box;
   text-decoration: none;
-  padding: 14px 58px 14px 57px;
+  padding: 0;
   line-height: 1;
   text-align: left;
   display: flex;
@@ -183,26 +128,11 @@ html {
   line-height: 1;
 }
 
-/* Styling a button on a desktop with a hover effect */
-@media (min-width: 769px) {
-  .button:hover {
-    background-color: #fff;
-    color: #000;
-  }
-  .logo::after {
-    content: "";
-  }
-
-  /* Other hover effects for elements on the desktop */
-  .service-box:hover {
-    transform: scale(1.05);
-    transition: transform 0.5s ease;
-  }
-}
-
 /* section "Our specialists" */
 .about {
-  padding: 50px 14px;
+  padding: 0;
+  margin-left: 14px;
+  margin-right: 14px;
   background-color: #ffffff;
 }
 
@@ -252,7 +182,7 @@ html {
 
 /* Section "What does our company do?" */
 .offer-section {
-  padding: 50px 14px;
+  padding: 0;
   background-color: #405d78;
 }
 
@@ -272,8 +202,7 @@ html {
 }
 
 .services-container {
-  margin: 0 auto;
-  padding: 0 20px;
+  padding: 0;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -285,6 +214,9 @@ html {
   text-align: center;
   position: relative;
   display: flex;
+  margin-left: 52px;
+  margin-right: 50px;
+  padding: 0;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -298,45 +230,6 @@ html {
 .service-box.even {
   height: 330px;
   width: 337px;
-}
-
-/* Dot styles big size */
-@media (min-width: 769px) {
-  .new-dot {
-    width: 22px;
-    height: 22px;
-    top: 33px;
-    left: 33px;
-  }
-
-  .new-dot svg {
-    width: 100%;
-    height: 100%;
-  }
-
-  .container {
-    max-width: 960px;
-    width: 100%;
-    margin: 0 auto;
-  }
-}
-
-@media (min-width: 768px) {
-  .services {
-    display: block;
-  }
-
-  .service-box {
-    width: auto;
-    margin-left: 50px;
-    margin-right: 52px;
-    margin-bottom: 42px;
-  }
-
-  .service-box.even {
-    margin-left: 52px;
-    margin-right: 52px;
-  }
 }
 
 /* Dot Styles */
@@ -367,17 +260,22 @@ html {
   background-color: #4e4e4e;
   color: #fff;
   height: 147px;
-  padding-top: 38px;
+  padding: 0;
   text-align: center;
   display: flex;
-  flex-direction: column;
+  justify-content: center;
   align-items: center;
   width: 100%;
   box-sizing: border-box;
 }
 
+.footer .container {
+  max-width: 960px;
+  margin: 0 auto;
+}
+
 .footer-text {
-  margin-bottom: 15px;
+  margin: 0;
 }
 
 .social-icons i {
@@ -388,7 +286,6 @@ html {
 }
 
 .social-icons {
-  display: flex;
   gap: 18px;
 }
 
@@ -400,11 +297,74 @@ html {
   margin-right: 182px;
 }
 
+@media (min-width: 769px) {
+  .container {
+    max-width: 960px;
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .button:hover {
+    background-color: #fff;
+    color: #000;
+  }
+
+  .service-box:hover {
+    transform: scale(1.05);
+    transition: transform 0.5s ease;
+  }
+
+  .new-dot svg {
+    width: 100%;
+    height: 100%;
+  }
+
+  .services {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 42px;
+  }
+  .serv .service-box {
+    width: auto;
+    margin-left: 50px;
+    margin-right: 52px;
+    margin-bottom: 42px;
+  }
+
+  .service-box.even {
+    margin-left: 52px;
+    margin-right: 52px;
+  }
+
+  .navigation {
+    display: none;
+  }
+
+  .social-icons i {
+    width: 31px;
+    height: 31px;
+    font-size: 31px;
+  }
+
+  .social-icons {
+    gap: 18px;
+  }
+}
+
 /* Media Queries for Desktop */
 @media (min-width: 1280px) {
   .header {
     height: 50px;
     padding: 0;
+  }
+
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
   }
 
   .logo {
@@ -429,16 +389,7 @@ html {
   .landing-page {
     height: 100vh;
     padding: 0;
-    justify-content: flex-start;
-  }
-
-  .overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
   }
 
   .content {
@@ -462,9 +413,8 @@ html {
     height: 40.744px;
   }
 
-  /* Specialist Section */
   .about {
-    padding: 78px 122px 80px 95px;
+    padding: 0;
   }
 
   .about-title {
@@ -528,10 +478,11 @@ html {
     margin-top: 10px;
     margin-bottom: 0;
   }
-  /* Services Section */
+
   .offer-section {
     background-color: #405d78;
     margin: 0 auto;
+    height: 689px;
   }
 
   .section-title {
@@ -636,20 +587,7 @@ html {
   }
 }
 
-@media (min-width: 769px) {
-  .container {
-    max-width: 960px;
-    width: 100%;
-    margin: 0 auto;
-  }
-}
-
-/* Small screens */
-@media (max-width: 768px) {
-  .navigation {
-    display: none;
-  }
-
+@media (max-width: 1280px) {
   .logo {
     position: relative;
     color: transparent;
@@ -665,5 +603,19 @@ html {
     left: 10px;
     transform: translateY(-50%);
     white-space: nowrap;
+  }
+  .navigation {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .service-box.odd,
+  .service-box.even {
+    width: 80vw;
+    height: 80vw;
+    margin-left: 10vw;
+    margin-right: 10vw;
+    margin-bottom: 10vw;
   }
 }
